@@ -1,0 +1,164 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackExchange.Redis", "StackExchange.Redis\StackExchange.Redis.csproj", "{7CEC07F2-8C03-4C42-B048-738B215824C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackExchange.Redis.Tests", "StackExchange.Redis.Tests\StackExchange.Redis.Tests.csproj", "{19C00111-1328-4089-8565-94920B5B47F2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{D3090DF1-8760-4FE2-A595-4C8AC12854ED}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Redis Configs", "Redis Configs", "{29A8EF11-C420-41F5-B8DC-BB586EF4D827}"
+	ProjectSection(SolutionItems) = preProject
+		Redis Configs\master.conf = Redis Configs\master.conf
+		Redis Configs\redis-cli 7000.cmd = Redis Configs\redis-cli 7000.cmd
+		Redis Configs\redis-cli 7001.cmd = Redis Configs\redis-cli 7001.cmd
+		Redis Configs\redis-cli 7002.cmd = Redis Configs\redis-cli 7002.cmd
+		Redis Configs\redis-cli 7003.cmd = Redis Configs\redis-cli 7003.cmd
+		Redis Configs\redis-cli 7004.cmd = Redis Configs\redis-cli 7004.cmd
+		Redis Configs\redis-cli 7005.cmd = Redis Configs\redis-cli 7005.cmd
+		Redis Configs\redis-cli master.cmd = Redis Configs\redis-cli master.cmd
+		Redis Configs\redis-cli secure.cmd = Redis Configs\redis-cli secure.cmd
+		Redis Configs\redis-cli slave.cmd = Redis Configs\redis-cli slave.cmd
+		Redis Configs\redis-server all local.cmd = Redis Configs\redis-server all local.cmd
+		Redis Configs\redis-server master.cmd = Redis Configs\redis-server master.cmd
+		Redis Configs\redis-server secure.cmd = Redis Configs\redis-server secure.cmd
+		Redis Configs\redis-server slave.cmd = Redis Configs\redis-server slave.cmd
+		Redis Configs\secure.conf = Redis Configs\secure.conf
+		Redis Configs\slave.conf = Redis Configs\slave.conf
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{709E0CE4-F0BA-4933-A4FD-4A8B6668A5D4}"
+	ProjectSection(SolutionItems) = preProject
+		build.msbuild = build.msbuild
+		monobuild.bash = monobuild.bash
+		monobuild.cmd = monobuild.cmd
+		netbuild.cmd = netbuild.cmd
+		StackExchange.Redis.nuspec = StackExchange.Redis.nuspec
+		StackExchange.Redis.StrongName.nuspec = StackExchange.Redis.StrongName.nuspec
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectionWatcher", "ConnectionWatcher\ConnectionWatcher.csproj", "{6756F911-BD09-4226-B597-67871DEB8ED5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Docs", "Docs\Docs.csproj", "{7909952C-0F38-4E62-A7BA-1A77E1452FDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicTest", "BasicTest\BasicTest.csproj", "{BE213DFB-5334-4441-B975-0DBCFD5F5A73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MigratedBookSleeveTestSuite", "MigratedBookSleeveTestSuite\MigratedBookSleeveTestSuite.csproj", "{97B45B3A-34DB-43C3-A979-37F217390142}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackExchange.Redis_Net40", "StackExchange.Redis_Net40\StackExchange.Redis_Net40.csproj", "{36CAC6B6-2B88-447F-AA35-D4DAA5E4F2C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackExchange.Redis.StrongName", "StackExchange.Redis\StackExchange.Redis.StrongName.csproj", "{EBF46088-E318-4D32-9EFB-01EF130A4554}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackExchange.Redis_Net40.StrongName", "StackExchange.Redis_Net40\StackExchange.Redis_Net40.StrongName.csproj", "{75CED009-AAC6-4AC1-9C38-A0530619062D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisHelper", "RedisHelper\RedisHelper.csproj", "{D5CB65F2-DC3A-473E-8217-CB11E86EA204}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplicationTest1", "ConsoleApplicationTest1\ConsoleApplicationTest1.csproj", "{A82E04AD-0F64-450D-92ED-E7F0D6A85031}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Log Output|Any CPU = Log Output|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Verbose|Any CPU = Verbose|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7CEC07F2-8C03-4C42-B048-738B215824C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CEC07F2-8C03-4C42-B048-738B215824C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CEC07F2-8C03-4C42-B048-738B215824C1}.Log Output|Any CPU.ActiveCfg = Log Output|Any CPU
+		{7CEC07F2-8C03-4C42-B048-738B215824C1}.Log Output|Any CPU.Build.0 = Log Output|Any CPU
+		{7CEC07F2-8C03-4C42-B048-738B215824C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CEC07F2-8C03-4C42-B048-738B215824C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CEC07F2-8C03-4C42-B048-738B215824C1}.Verbose|Any CPU.ActiveCfg = Verbose|Any CPU
+		{7CEC07F2-8C03-4C42-B048-738B215824C1}.Verbose|Any CPU.Build.0 = Verbose|Any CPU
+		{19C00111-1328-4089-8565-94920B5B47F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19C00111-1328-4089-8565-94920B5B47F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19C00111-1328-4089-8565-94920B5B47F2}.Log Output|Any CPU.ActiveCfg = Log Output|Any CPU
+		{19C00111-1328-4089-8565-94920B5B47F2}.Log Output|Any CPU.Build.0 = Log Output|Any CPU
+		{19C00111-1328-4089-8565-94920B5B47F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19C00111-1328-4089-8565-94920B5B47F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19C00111-1328-4089-8565-94920B5B47F2}.Verbose|Any CPU.ActiveCfg = Verbose|Any CPU
+		{19C00111-1328-4089-8565-94920B5B47F2}.Verbose|Any CPU.Build.0 = Verbose|Any CPU
+		{6756F911-BD09-4226-B597-67871DEB8ED5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6756F911-BD09-4226-B597-67871DEB8ED5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6756F911-BD09-4226-B597-67871DEB8ED5}.Log Output|Any CPU.ActiveCfg = Log Output|Any CPU
+		{6756F911-BD09-4226-B597-67871DEB8ED5}.Log Output|Any CPU.Build.0 = Log Output|Any CPU
+		{6756F911-BD09-4226-B597-67871DEB8ED5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6756F911-BD09-4226-B597-67871DEB8ED5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6756F911-BD09-4226-B597-67871DEB8ED5}.Verbose|Any CPU.ActiveCfg = Verbose|Any CPU
+		{6756F911-BD09-4226-B597-67871DEB8ED5}.Verbose|Any CPU.Build.0 = Verbose|Any CPU
+		{7909952C-0F38-4E62-A7BA-1A77E1452FDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7909952C-0F38-4E62-A7BA-1A77E1452FDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7909952C-0F38-4E62-A7BA-1A77E1452FDA}.Log Output|Any CPU.ActiveCfg = Release|Any CPU
+		{7909952C-0F38-4E62-A7BA-1A77E1452FDA}.Log Output|Any CPU.Build.0 = Release|Any CPU
+		{7909952C-0F38-4E62-A7BA-1A77E1452FDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7909952C-0F38-4E62-A7BA-1A77E1452FDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7909952C-0F38-4E62-A7BA-1A77E1452FDA}.Verbose|Any CPU.ActiveCfg = Release|Any CPU
+		{7909952C-0F38-4E62-A7BA-1A77E1452FDA}.Verbose|Any CPU.Build.0 = Release|Any CPU
+		{BE213DFB-5334-4441-B975-0DBCFD5F5A73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE213DFB-5334-4441-B975-0DBCFD5F5A73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE213DFB-5334-4441-B975-0DBCFD5F5A73}.Log Output|Any CPU.ActiveCfg = Release|Any CPU
+		{BE213DFB-5334-4441-B975-0DBCFD5F5A73}.Log Output|Any CPU.Build.0 = Release|Any CPU
+		{BE213DFB-5334-4441-B975-0DBCFD5F5A73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE213DFB-5334-4441-B975-0DBCFD5F5A73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE213DFB-5334-4441-B975-0DBCFD5F5A73}.Verbose|Any CPU.ActiveCfg = Release|Any CPU
+		{BE213DFB-5334-4441-B975-0DBCFD5F5A73}.Verbose|Any CPU.Build.0 = Release|Any CPU
+		{97B45B3A-34DB-43C3-A979-37F217390142}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97B45B3A-34DB-43C3-A979-37F217390142}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97B45B3A-34DB-43C3-A979-37F217390142}.Log Output|Any CPU.ActiveCfg = Release|Any CPU
+		{97B45B3A-34DB-43C3-A979-37F217390142}.Log Output|Any CPU.Build.0 = Release|Any CPU
+		{97B45B3A-34DB-43C3-A979-37F217390142}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97B45B3A-34DB-43C3-A979-37F217390142}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97B45B3A-34DB-43C3-A979-37F217390142}.Verbose|Any CPU.ActiveCfg = Release|Any CPU
+		{97B45B3A-34DB-43C3-A979-37F217390142}.Verbose|Any CPU.Build.0 = Release|Any CPU
+		{36CAC6B6-2B88-447F-AA35-D4DAA5E4F2C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36CAC6B6-2B88-447F-AA35-D4DAA5E4F2C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36CAC6B6-2B88-447F-AA35-D4DAA5E4F2C7}.Log Output|Any CPU.ActiveCfg = Release|Any CPU
+		{36CAC6B6-2B88-447F-AA35-D4DAA5E4F2C7}.Log Output|Any CPU.Build.0 = Release|Any CPU
+		{36CAC6B6-2B88-447F-AA35-D4DAA5E4F2C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36CAC6B6-2B88-447F-AA35-D4DAA5E4F2C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36CAC6B6-2B88-447F-AA35-D4DAA5E4F2C7}.Verbose|Any CPU.ActiveCfg = Release|Any CPU
+		{36CAC6B6-2B88-447F-AA35-D4DAA5E4F2C7}.Verbose|Any CPU.Build.0 = Release|Any CPU
+		{EBF46088-E318-4D32-9EFB-01EF130A4554}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBF46088-E318-4D32-9EFB-01EF130A4554}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBF46088-E318-4D32-9EFB-01EF130A4554}.Log Output|Any CPU.ActiveCfg = Log Output|Any CPU
+		{EBF46088-E318-4D32-9EFB-01EF130A4554}.Log Output|Any CPU.Build.0 = Log Output|Any CPU
+		{EBF46088-E318-4D32-9EFB-01EF130A4554}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBF46088-E318-4D32-9EFB-01EF130A4554}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBF46088-E318-4D32-9EFB-01EF130A4554}.Verbose|Any CPU.ActiveCfg = Verbose|Any CPU
+		{EBF46088-E318-4D32-9EFB-01EF130A4554}.Verbose|Any CPU.Build.0 = Verbose|Any CPU
+		{75CED009-AAC6-4AC1-9C38-A0530619062D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75CED009-AAC6-4AC1-9C38-A0530619062D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75CED009-AAC6-4AC1-9C38-A0530619062D}.Log Output|Any CPU.ActiveCfg = Release|Any CPU
+		{75CED009-AAC6-4AC1-9C38-A0530619062D}.Log Output|Any CPU.Build.0 = Release|Any CPU
+		{75CED009-AAC6-4AC1-9C38-A0530619062D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75CED009-AAC6-4AC1-9C38-A0530619062D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75CED009-AAC6-4AC1-9C38-A0530619062D}.Verbose|Any CPU.ActiveCfg = Release|Any CPU
+		{75CED009-AAC6-4AC1-9C38-A0530619062D}.Verbose|Any CPU.Build.0 = Release|Any CPU
+		{D5CB65F2-DC3A-473E-8217-CB11E86EA204}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5CB65F2-DC3A-473E-8217-CB11E86EA204}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5CB65F2-DC3A-473E-8217-CB11E86EA204}.Log Output|Any CPU.ActiveCfg = Release|Any CPU
+		{D5CB65F2-DC3A-473E-8217-CB11E86EA204}.Log Output|Any CPU.Build.0 = Release|Any CPU
+		{D5CB65F2-DC3A-473E-8217-CB11E86EA204}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5CB65F2-DC3A-473E-8217-CB11E86EA204}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5CB65F2-DC3A-473E-8217-CB11E86EA204}.Verbose|Any CPU.ActiveCfg = Release|Any CPU
+		{D5CB65F2-DC3A-473E-8217-CB11E86EA204}.Verbose|Any CPU.Build.0 = Release|Any CPU
+		{A82E04AD-0F64-450D-92ED-E7F0D6A85031}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A82E04AD-0F64-450D-92ED-E7F0D6A85031}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A82E04AD-0F64-450D-92ED-E7F0D6A85031}.Log Output|Any CPU.ActiveCfg = Release|Any CPU
+		{A82E04AD-0F64-450D-92ED-E7F0D6A85031}.Log Output|Any CPU.Build.0 = Release|Any CPU
+		{A82E04AD-0F64-450D-92ED-E7F0D6A85031}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A82E04AD-0F64-450D-92ED-E7F0D6A85031}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A82E04AD-0F64-450D-92ED-E7F0D6A85031}.Verbose|Any CPU.ActiveCfg = Release|Any CPU
+		{A82E04AD-0F64-450D-92ED-E7F0D6A85031}.Verbose|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

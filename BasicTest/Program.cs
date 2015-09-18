@@ -1,0 +1,66 @@
+﻿using System;
+using System.Diagnostics;
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Threading;
+using System.Threading.Tasks;
+using StackExchange.Redis;
+
+[assembly: AssemblyVersion("1.0.0")]
+
+namespace BasicTest
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int AsyncOpsQty = 10000;
+            if (args.Length == 1)
+            {
+                int tmp;
+                if (int.TryParse(args[0], out tmp))
+                    AsyncOpsQty = tmp;
+            }
+            MassiveBulkOpsAsync(AsyncOpsQty, true, true);
+            MassiveBulkOpsAsync(AsyncOpsQty, true, false);
+            MassiveBulkOpsAsync(AsyncOpsQty, false, true);
+            MassiveBulkOpsAsync(AsyncOpsQty, false, false);
+        }
+
+
+        
+        static void MassiveBulkOpsAsync(int AsyncOpsQty, bool preserveOrder, bool withContinuation)
+        {
+            using (var muxer = ConnectionMultiplexer.Connect("172.17.1.70:11111,resolvedns=1"))
+            {
+                muxer.PreserveAsyncOrder = preserveOrder;
+                RedisKey key = "MBOA";
+                var conn = muxer.GetDatabase();
+                muxer.Wait(conn.PingAsync());
+
+                Action<Task> nonTrivial = delegate
+                {
+                    Thread.SpinWait(5);
+                };
+                var watch = Stopwatch.StartNew();
+                for (int i = 0; i <= AsyncOpsQty; i++)
+                {
+                    var t = conn.StringSetAsync(key + i.ToString(), i);
+                    if (withContinuation) t.ContinueWith(nonTrivial);
+                }
+                int val = (int)muxer.Wait(conn.StringGetAsync(key));
+                watch.Stop();
+
+                Console.WriteLine("After {0}: {1}", AsyncOpsQty, val);
+                Console.WriteLine("({3}, {4})\r\n{2}: Time for {0} ops: {1}ms; ops/s: {5}", AsyncOpsQty, watch.ElapsedMilliseconds, Me(),
+                    withContinuation ? "with continuation" : "no continuation", preserveOrder ? "preserve order" : "any order",
+                    AsyncOpsQty / watch.Elapsed.TotalSeconds);
+            }
+        }
+        protected static string Me([CallerMemberName] string caller = null)
+        {
+            return caller;
+        }
+
+    }
+}
