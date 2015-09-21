@@ -10,7 +10,8 @@ namespace RedisHelper
 {
     public class RedisGroup
     {
-        public static ZpRedis RdRedis = new ZpRedis("172.17.1.70:11111");
+        public static ZpRedis RdRedis = new ZpRedis("192.168.0.123:7001,192.168.0.123:7002,192.168.0.123:7003,192.168.0.123:7004,192.168.0.123:7005,192.168.0.123:7006");
+        //public static ZpRedis RdRedis = new ZpRedis("192.168.0.123:11111");
         //public static ZpRedis Resume = new ZpRedis("172.17.1.70:10001,172.17.1.70:10002,172.17.1.70:10003,172.17.1.70:10004,172.17.1.70:10005,172.17.1.70:10006");
     }
 
@@ -39,11 +40,22 @@ namespace RedisHelper
                 var key = keySelector(item);
                 tasks[i] = _db.StringSetAsync(key, JsonConvert.SerializeObject(item), timespan);
             }
-            Task.WaitAll(tasks);
+
+            try
+            {
+                Task.WaitAll(tasks);
+            }
+            catch (Exception ex)
+            {
+                var xx = ex;
+                throw;
+            }            
         }
 
-        public void HashSet(string key, HashEntry[] hashFields, TimeSpan? timespan = null)
+        public void HashSet<T>(T model, Func<T, string> keySelector, TimeSpan? timespan = null) where T : IHashEntry
         {
+            var key = keySelector(model);
+            var hashFields = model.GetHashEntries();
             _db.HashSet(key, hashFields);
             if (timespan.HasValue)
             {
@@ -51,7 +63,26 @@ namespace RedisHelper
             }
         }
 
-
+        public void HashSet<T>(T[] items, Func<T, string> keySelector, TimeSpan? timespan = null) where T : IHashEntry
+        {
+            var tasks = new Task[items.Length];
+            var tasks2 = new Task[items.Length];
+            for (int i = 0; i < items.Length; i++)
+            {
+                var item = items[i];
+                var key = keySelector(item);
+                var hashFields = item.GetHashEntries();
+                tasks[i] = _db.HashSetAsync(key, hashFields).ContinueWith((t, state) =>
+                {
+                    if (timespan.HasValue)
+                    {
+                        tasks2[(int)state] = _db.KeyExpireAsync(key, timespan);
+                    }
+                }, i);
+            }
+            Task.WaitAll(tasks);
+            Task.WaitAll(tasks2);
+        }
 
         public void set2(KeyValuePair<string, string>[] pairs, TimeSpan? timespan = null)
         {

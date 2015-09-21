@@ -1,4 +1,6 @@
-﻿using System;
+﻿using RedisHelper;
+using StackExchange.Redis;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +8,8 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplicationTest1
 {
-    public class PartabModel
+    [Serializable]
+    public class PartabModel : IHashEntry
     {
         public const string PROPERTYNAME_GID = "gid";
         public const string PROPERTYNAME_PNUMBER = "pnumber";
@@ -15,6 +18,16 @@ namespace ConsoleApplicationTest1
         public long gid { get; set; }
         public string pnumber { get; set; }
         public DateTime mdate { get; set; }
+
+        public HashEntry[] GetHashEntries()
+        {
+            return new HashEntry[]
+            {
+             new HashEntry(PartabModel.PROPERTYNAME_GID,this.gid ),
+             new HashEntry(PartabModel.PROPERTYNAME_PNUMBER,this.pnumber ),
+             new HashEntry(PartabModel.PROPERTYNAME_MDATE,this.mdate.ToString() )
+            };
+        }
     }
 
     public class TestHelper
